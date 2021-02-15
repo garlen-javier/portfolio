@@ -5,7 +5,6 @@
  */
 
 module.exports = {
-  pathPrefix: "/portfolio",
   siteMetadata: {
     title: "WebDev Portfolio",
     description: "This is WebDev Portfolio Site",
@@ -53,4 +52,5 @@ module.exports = {
     //   },
     // },
   ],
+  pathPrefix: "/portfolio"
 }
