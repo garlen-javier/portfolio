@@ -6,7 +6,70 @@ import Services from "../components/Services"
 import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
-export default () => {
-  return <h2>index page</h2>
+import SEO from "../components/SEO"
+
+
+export const query = graphql`
+  {
+    allStrapiProjects(filter: {isFeatured: {eq: true}}) {
+      nodes {
+        id
+        title
+        description
+        featured_image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        tech_stack {
+          id
+          value
+        }
+        link
+      }
+    }
+
+    allStrapiBlogs(sort: { fields: created_at, order: DESC }, limit: 3)  {
+      nodes {
+        id
+        title
+        url
+        excerpt
+        tags {
+          id
+          value
+        }
+        featured_image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+
+  }
+`
+
+
+export default ({ data }) => {
+  const {
+    allStrapiProjects: { nodes: projects },
+    allStrapiBlogs: { nodes: blogs },
+  } = data
+
+  return (
+    <Layout>
+      <SEO title="Home" description="this is our home page" />
+      <Hero />
+      <Services />
+      <Jobs />
+      <Projects projects={projects} title="featured projects" showLink />
+      <Blogs blogs={blogs} title="latest articles" showLink />
+    </Layout>
+  )
 }
-// ...GatsbyImageSharpFluid
+

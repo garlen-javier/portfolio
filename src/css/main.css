@@ -552,6 +552,7 @@ Jobs
   margin-bottom: 4rem;
 }
 .job-btn {
+  outline: none;
   background: transparent;
   border-color: transparent;
   text-transform: capitalize;
@@ -568,6 +569,7 @@ Jobs
   box-shadow: 0 2px var(--clr-primary-5);
 }
 .active-btn {
+  outline: none;
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
 }
@@ -614,9 +616,11 @@ Jobs
     justify-content: flex-start;
   }
   .job-btn {
+    outline: none;
     margin-bottom: 1rem;
   }
   .active-btn {
+    outline: none;
     box-shadow: -2px 0 var(--clr-primary-5);
   }
   .job-btn:hover {
@@ -668,13 +672,15 @@ Projects
   color: var(--clr-primary-5);
   margin-bottom: 0.75rem;
 }
+.project-title {
+  color: var(--clr-primary-5);
+}
 .project-info h3 {
   font-weight: 500;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
 }
 .project-desc {
-  word-spacing: 15px;
   color: var(--clr-grey-3);
 }
 .project-stack {
@@ -786,14 +792,29 @@ Blog
 
 .blog-footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
+
 .blog-footer p {
   margin-bottom: 0;
   font-weight: bold;
   color: var(--clr-grey-5);
 }
+
+.blog-footer span {
+  display: inline-block;
+  background: var(--clr-grey-9);
+  color: var(--clr-grey-5);
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
 .blog-footer p:first-of-type {
   display: inline-block;
   background: var(--clr-grey-9);

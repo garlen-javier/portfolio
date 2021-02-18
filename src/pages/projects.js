@@ -2,10 +2,45 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
-// ...GatsbyImageSharpFluid
+import SEO from "../components/SEO"
 
-const ProjectsPage = () => {
-  return <h2>projects page</h2>
+const ProjectsPage = ({
+  data: {
+    allStrapiProjects: { nodes: projects },
+  },
+}) => {
+  return (
+    <Layout>
+      <SEO title="Projects" />
+      <section className="projects-page">
+        <Projects projects={projects} title="all projects" />
+      </section>
+    </Layout>
+  )
 }
+
+export const query = graphql`
+  {
+    allStrapiProjects {
+      nodes {
+        id
+        title
+        description
+        featured_image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        tech_stack {
+          id
+          value
+        }
+        link
+      }
+    }
+  }
+`
 
 export default ProjectsPage
