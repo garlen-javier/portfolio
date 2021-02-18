@@ -9,11 +9,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
-        with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: gh-pages
-          gatsby-args: --prefix-paths
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Build
+        run: |
+          npm install
+          npm run-script build
         env:
           GATSBY_STRAPI_URL: ${{ secrets.GATSBY_STRAPI_URL }}
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
