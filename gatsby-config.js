@@ -32,7 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `${process.env.GATSBY_STRAPI_URL}`,
+        //apiURL: `${process.env.GATSBY_STRAPI_URL}`, //https://garlen-portfolio-api.herokuapp.com //http://localhost:1337
+        apiURL: `https://garlen-portfolio-api.herokuapp.com`,
         queryLimit: 1000, // Default to 100
         contentTypes: [`jobs`,`projects`,`blogs`],
         singleTypes: [`about`],
