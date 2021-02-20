@@ -26,6 +26,8 @@ const SEO = ({ title, description, image, article }) => {
     url: siteUrl,
   }
 
+  console.log("siteUrl")
+  console.log(siteUrl)
   console.log("param image")
   console.log(image)
   console.log("defaultImage image")
