@@ -68,5 +68,5 @@ module.exports = {
     },
     'gatsby-plugin-offline',
   ],
-  pathPrefix: "/portfolio"
+  pathPrefix: "/portfolio" //for github page
 }
