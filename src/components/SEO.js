@@ -22,11 +22,11 @@ const SEO = ({ title, description, image, article }) => {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${notrail_pathname}`,
+    url: siteUrl,
   }
 
   console.log("SEO")
-  console.log(image)
+  console.log(seo.image)
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
