@@ -13,7 +13,7 @@ const About = ({
 
   return (
     <Layout>
-      <SEO title="About Me" description="Full Stack Mobile Developer" image={profile_pic.publicURL.replace('/portfolio/','')} />
+      <SEO title="About Me" description="Full Stack Mobile Developer" image={profile_pic.publicURL.replace('/portfolio','')} />
       <section className="about-page">
         <div className="section-center about-center">
           <Image fluid={profile_pic.childImageSharp.fluid} className="about-img" />
