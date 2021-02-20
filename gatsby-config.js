@@ -8,15 +8,10 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const settings = require("./src/util/site.json")
+
 module.exports = {
-  siteMetadata: {
-    title: "Garlen Javier",
-    titleTemplate: "%s",
-    description: "Garlen Javier Portfolio",
-    twitterUsername: "@meek_code",
-    image: "/assets/logo.svg",
-    siteUrl: "https://garlen-javier.github.io/portfolio",
-  },
+  siteMetadata: settings.meta,
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -53,6 +48,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: settings.meta.siteUrl,
+        stripQueryString: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Garlen Javier`,
@@ -61,7 +63,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#2c292a`,
         display: `standalone`,
-        icon: `static/meekcode.png`,
+        icon: `static/portfolio-logo.png`,
       },
     },
     'gatsby-plugin-offline',
