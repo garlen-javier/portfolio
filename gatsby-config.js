@@ -52,6 +52,19 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Garlen Javier`,
+        short_name: `Garlen Javier`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#2c292a`,
+        display: `standalone`,
+        icon: `static/assets/logo.svg`,
+      },
+    },
+    'gatsby-plugin-offline',
   ],
   pathPrefix: "/portfolio"
 }
