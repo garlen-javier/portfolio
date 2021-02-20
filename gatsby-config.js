@@ -10,11 +10,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Garlen Portfolio",
-    description: "Garlen Javier Portfolio Site",
+    title: "Garlen Javier",
+    description: "Garlen Javier Portfolio",
     author: "Garlen Javier",
     twitterUsername: "@meek_code",
-    image: "/twitter-img.png",
+    image: "/assets/logo.svg",
     siteUrl: "https://garlen-javier.github.io/portfolio",
   },
   plugins: [

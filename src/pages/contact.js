@@ -68,7 +68,7 @@ class Contact extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="Contact" />
+        <SEO title="Let’s build your app!" description="Got an amazing app idea you want to turn into reality? Let’s discuss it." />
         <Helmet>
           <script
             src="https://www.google.com/recaptcha/api.js"

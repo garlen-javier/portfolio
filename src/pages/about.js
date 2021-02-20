@@ -13,7 +13,7 @@ const About = ({
 
   return (
     <Layout>
-      <SEO title="About Me" description="about webdev" />
+      <SEO title="About Me" description="Full Stack Mobile Developer" image={profile_pic.publicURL} />
       <section className="about-page">
         <div className="section-center about-center">
           <Image fluid={profile_pic.childImageSharp.fluid} className="about-img" />
@@ -45,6 +45,7 @@ export const query = graphql`
           value
         }
         profile_pic {
+          publicURL
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
