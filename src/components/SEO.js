@@ -5,9 +5,9 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ title, description, image, article }) => {
-  const { pathname } = useLocation()
+  //const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
-  var notrail_pathname = pathname !== "/" && (/\/$/).test(pathname) ? pathname.slice(0, -1) : pathname
+  //var notrail_pathname = pathname !== "/" && (/\/$/).test(pathname) ? pathname.slice(0, -1) : pathname
 
   const {
     defaultTitle,
@@ -21,7 +21,8 @@ const SEO = ({ title, description, image, article }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
+    //image: `${siteUrl}${image || defaultImage}`,
+    image: image || defaultImage,
     url: siteUrl,
   }
 
