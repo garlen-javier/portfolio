@@ -22,21 +22,8 @@ const SEO = ({ title, description, image, article }) => {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
-    //url: siteUrl,
     url: `${siteUrl}${notrail_pathname.replace('/portfolio','')}`,
   }
-
-  console.log("siteUrl")
-  console.log(siteUrl)
-  console.log("notrail_pathname")
-  console.log(notrail_pathname)
-
-  console.log("param image")
-  console.log(image)
-  console.log("defaultImage image")
-  console.log(defaultImage)
-  console.log("SEO")
-  console.log(seo.image)
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
