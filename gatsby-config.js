@@ -11,8 +11,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Garlen Javier",
+    titleTemplate: "%s",
     description: "Garlen Javier Portfolio",
-    author: "Garlen Javier",
     twitterUsername: "@meek_code",
     image: "/assets/logo.svg",
     siteUrl: "https://garlen-javier.github.io/portfolio",
