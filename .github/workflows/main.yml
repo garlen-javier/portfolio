@@ -17,3 +17,7 @@ jobs:
           gatsby-args: --prefix-paths
         env:
           GATSBY_STRAPI_URL: ${{ secrets.GATSBY_STRAPI_URL}}
+          GATSBY_FORMSPREE_ID: ${{ secrets.GATSBY_FORMSPREE_ID}}
+          GATSBY_RECAPTCHA_SITE_KEY: ${{ secrets.GATSBY_RECAPTCHA_SITE_KEY}}
+          GATSBY_RECAPTCHA_SECRET_KEY: ${{ secrets.GATSBY_RECAPTCHA_SECRET_KEY}}
+          

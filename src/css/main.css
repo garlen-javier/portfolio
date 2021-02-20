@@ -438,6 +438,7 @@ Hero
 }
 .hero .btn {
   margin-top: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -682,6 +683,7 @@ Projects
 }
 .project-desc {
   color: var(--clr-grey-3);
+  margin-bottom: 1.5rem;
 }
 .project-stack {
   margin-bottom: 1rem;
@@ -700,6 +702,10 @@ Projects
 }
 .about-stack span {
   margin-top: 0.5rem;
+}
+.project-links
+{
+  text-align: right;
 }
 .project-icon {
   color: var(--clr-primary-5);
@@ -980,6 +986,14 @@ Contact Page
   width: 90vw;
   max-width: 35rem;
 }
+.contact-form p{
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  text-align: start;
+}
+.contact-form a{
+  color: var(--clr-primary-4);
+}
 .contact-form:hover {
   box-shadow: var(--dark-shadow);
 }
@@ -998,12 +1012,10 @@ Contact Page
   margin-bottom: 1.25rem;
   background: var(--clr-grey-10);
   border-radius: var(--radius);
-  text-transform: uppercase;
-  letter-spacing: var(--spacing);
 }
 .form-control::placeholder {
   font-family: var(--ff-primary);
-  color: var(--clr-grey-1);
+  color: gray;
   text-transform: uppercase;
   letter-spacing: var(--spacing);
 }
@@ -1060,4 +1072,12 @@ Blog Template
   width: 15rem;
   height: 15rem;
   margin: 3rem 0;
+}
+.captcha {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hide-captcha {
+  display: none;
 }

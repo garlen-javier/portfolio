@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Image from "gatsby-image"
-import { FaShareSquare } from "react-icons/fa"
+import { FaGithubSquare,FaExternalLinkSquareAlt} from "react-icons/fa"
 import MDEditor from "@uiw/react-md-editor"
 
-const Project = ({description, title,tech_stack, link, featured_image}) => {
+const Project = ({description, title, tech_stack, github, link, featured_image}) => {
   return (
     <article className="project">
       {featured_image && (
@@ -13,17 +13,20 @@ const Project = ({description, title,tech_stack, link, featured_image}) => {
       <div className="project-info">
         {/* <span className="project-number">0{index + 1}.</span> */}
         <h3 className="project-title">{title || "default title"}</h3>
-        <p className="project-desc">
+        <div className="project-desc">
         <MDEditor.Markdown source={description} />
-        </p>
+        </div>
         <div className="project-stack">
           {tech_stack.map(item => {
             return <span key={item.id}>{item.value}</span>
           })}
         </div>
         <div className="project-links">
+        {github !== "none" && <a href={github}>
+            <FaGithubSquare size={26} className="project-icon" />
+          </a>}
           <a href={link}>
-            <FaShareSquare className="project-icon" />
+            <FaExternalLinkSquareAlt size={26} className="project-icon" />
           </a>
         </div>
       </div>

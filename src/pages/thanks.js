@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/Layout"
-import { graphql,Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import SEO from "../components/SEO"
 import Img from "gatsby-image"
 
 export const query = graphql`
   query {
-    notFound: file(relativePath: { eq: "not_found.png" }) {
+    gotMessage: file(relativePath: { eq: "message_sent.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -16,19 +16,20 @@ export const query = graphql`
   }
 `
 
-const Error = ({data}) => {
+const Thanks = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Not Found" />
+      <SEO title="Thank you" />
       <main className="error-page">
         <div className="error-container">
-        <Img
-            fluid={data.notFound.childImageSharp.fluid}
-            alt="not found"
+          <Img
+            fluid={data.gotMessage.childImageSharp.fluid}
+            alt="message sent"
             objectFit="cover"
             objectPosition="50% 50%"
           />
-          <h3>oops it's a dead end</h3>
+          <h2>Got your message</h2>
+          <p>Thank you for getting in touch. I will get back to you shortly.</p>
           <Link to="/" className="btn">
             back home
           </Link>
@@ -38,4 +39,4 @@ const Error = ({data}) => {
   )
 }
 
-export default Error
+export default Thanks

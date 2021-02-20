@@ -26,7 +26,6 @@ const Blog = ({ id, title, featured_image, tags, url, excerpt }) => {
 Blog.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.object).isRequired,
   excerpt: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,

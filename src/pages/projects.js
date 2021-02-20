@@ -26,6 +26,8 @@ export const query = graphql`
         id
         title
         description
+        github
+        link
         featured_image {
           childImageSharp {
             fluid {
@@ -37,7 +39,6 @@ export const query = graphql`
           id
           value
         }
-        link
       }
     }
   }

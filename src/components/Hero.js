@@ -17,6 +17,9 @@ export const query = graphql`
             }
           }
         }
+        resume {
+          publicURL
+        }
       }
     }
   }
@@ -27,7 +30,7 @@ const Hero = () => {
   const {
     allStrapiAbout: { nodes },
   } = data
-  const { first_name,job_title,profile_pic} = nodes[0]
+  const { first_name,job_title,profile_pic,resume} = nodes[0]
 
   return (
     <header className="hero">
@@ -40,6 +43,9 @@ const Hero = () => {
             <Link to="/contact" className="btn">
               contact me
             </Link>
+            <a href={resume.publicURL} download="garlen-javier" rel="noreferrer noopener" className="btn">
+              Download CV
+            </a>
             <SocialLinks />
           </div>
         </article>
