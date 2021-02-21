@@ -6,18 +6,18 @@ export default [
     id: 1,
     icon: <FaMobileAlt className="service-icon" />,
     title: "Mobile App",
-    text: `I'm baby meditation tofu chillwave, distillery messenger bag thundercats chicharrones kale chips gochujang. Banh mi direct trade marfa salvia.`,
+    text: `Native Android app made with java/kotlin and IOS app made with objective-c/swift or Hybrid app made with flutter.`,
   },
   {
     id: 2,
     icon: <FaGamepad className="service-icon" />,
     title: "Game Development",
-    text: `I'm baby meditation tofu chillwave, distillery messenger bag thundercats chicharrones kale chips gochujang. Banh mi direct trade marfa salvia.`,
+    text: `2D or 3D games made with cocos2d-x or Unity3D.`,
   },
   {
     id: 3,
     icon: <FaServer className="service-icon" />,
     title: "Back-End",
-    text: `I'm baby meditation tofu chillwave, distillery messenger bag thundercats chicharrones kale chips gochujang. Banh mi direct trade marfa salvia.`,
+    text: `APIs or Microservices primarily build with Golang and MongoDB. Server-side integration with AWS EC2.`,
   },
 ]

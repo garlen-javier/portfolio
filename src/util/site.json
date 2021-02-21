@@ -2,9 +2,9 @@
     "meta": {
       "title": "Garlen Javier",
       "titleTemplate": "%s",
-      "description": "Garlen Javier Portfolio",
+      "description": "Portfolio",
       "siteUrl": "https://garlen-javier.github.io/portfolio",
-      "image": "/meekcode.png",
+      "image": "/assets/developer.png",
       "twitterUsername": "@meek_code"
     }
   }

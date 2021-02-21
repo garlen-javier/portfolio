@@ -4,6 +4,15 @@ import SEO from "../components/SEO"
 import { Helmet } from "react-helmet"
 import { navigate } from "gatsby-link"
 import ReCAPTCHA from "react-google-recaptcha"
+import { graphql } from "gatsby"
+
+export const query = graphql`
+  query {
+    lets_build: file(relativePath: { eq: "lets_build.png" }) {
+      publicURL
+    }
+  }
+`
 
 const messageStyle = {
   resize: "none",
@@ -20,6 +29,7 @@ function encode(data) {
 class Contact extends React.Component {
   constructor(props) {
     super(props)
+    this.data = props
     this.recaptchaRef = React.createRef()
     this.state = {
       verified: false,
@@ -66,9 +76,13 @@ class Contact extends React.Component {
   }
 
   render() {
+    const { data } = this.data
+
     return (
       <Layout>
-        <SEO title="Let’s build your app!" description="Got an amazing app idea you want to turn into reality? Let’s discuss it." />
+        <SEO title="Let’s build your app!" 
+        description="Got an amazing app idea you want to turn into reality? Let’s discuss it." 
+        image={data.lets_build.publicURL.replace('/portfolio','')} />
         <Helmet>
           <script
             src="https://www.google.com/recaptcha/api.js"

@@ -18,7 +18,7 @@ export const query = graphql`
           }
         }
         resume {
-          url
+          publicURL
         }
       }
     }
@@ -43,7 +43,7 @@ const Hero = () => {
             <Link to="/contact" className="btn">
               contact me
             </Link>
-            <a href={resume.url} download="garlen-javier" rel="noreferrer noopener" className="btn">
+            <a href={resume.publicURL} download="garlen-javier" rel="noreferrer noopener" className="btn">
               Download CV
             </a>
             <SocialLinks />
