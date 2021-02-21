@@ -64,7 +64,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Mobile Developer" description="Got an amazing app idea you want to turn into reality? Let’s discuss it." />
+      <SEO title="Full Stack Mobile Developer" description="Got an amazing app idea you want to turn into reality? Let’s discuss it." />
       <Hero />
       <Services />
       <Jobs />

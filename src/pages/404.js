@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 export const query = graphql`
   query {
     notFound: file(relativePath: { eq: "not_found.png" }) {
+      publicURL
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -19,7 +20,7 @@ export const query = graphql`
 const Error = ({data}) => {
   return (
     <Layout>
-      <SEO title="Not Found" />
+      <SEO title="Not Found" image={data.notFound.publicURL.replace('/portfolio','')}/>
       <main className="error-page">
         <div className="error-container">
         <Img

@@ -19,7 +19,7 @@ const SEO = ({ title, description, image, article }) => {
   } = site.siteMetadata
 
   const seo = {
-    title: title || defaultTitle,
+    title: title !== null ? `${title} | ${defaultTitle}` : defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${notrail_pathname.replace('/portfolio','')}`,

@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 export const query = graphql`
   query {
     gotMessage: file(relativePath: { eq: "message_sent.png" }) {
+      publicURL
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -19,7 +20,7 @@ export const query = graphql`
 const Thanks = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Thank you" />
+      <SEO title="Thank you" image={data.gotMessage.publicURL.replace('/portfolio','')} />
       <main className="error-page">
         <div className="error-container">
           <Img
