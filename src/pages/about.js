@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import Title from "../components/Title"
 import Image from "gatsby-image"
 import SEO from "../components/SEO"
+import MDEditor from "@uiw/react-md-editor"
+
 const About = ({
   data: {
     about: { nodes },
@@ -19,7 +21,7 @@ const About = ({
           <Image fluid={profile_pic.childImageSharp.fluid} className="about-img" />
           <article className="about-text">
             <Title title="About Me" />
-            <p>{description}</p>
+            <p><MDEditor.Markdown source={description} /></p>
             <div className="about-stack">
               {tech_stack.map(item => {
                 return <span key={item.id}>{item.value}</span>

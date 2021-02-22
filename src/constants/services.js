@@ -12,7 +12,7 @@ export default [
     id: 2,
     icon: <FaGamepad className="service-icon" />,
     title: "Game Development",
-    text: `2D or 3D games made with cocos2d-x or Unity3D.`,
+    text: `2D or 3D games made with cocos2d-x or Unity3D. Additional optimization and plugins for mobile deployment can be applied.`,
   },
   {
     id: 3,

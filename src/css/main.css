@@ -797,7 +797,7 @@ Blog
 }
 
 .blog-footer {
-  display: flex;
+  display: inline-block;
   align-items: center;
 }
 
@@ -812,7 +812,7 @@ Blog
   background: var(--clr-grey-9);
   color: var(--clr-grey-5);
   font-weight: bold;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
   margin-right: 0.5rem;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
@@ -918,6 +918,9 @@ About Page
 */
 .about-page {
   padding: 7rem 0;
+}
+.about-page p a{
+  color: var(--clr-primary-4);
 }
 .about-img {
   margin-bottom: 2rem;
