@@ -11,7 +11,7 @@ import SEO from "../components/SEO"
 
 export const query = graphql`
   {
-    allStrapiProjects(filter: {isFeatured: {eq: true}}) {
+    allStrapiProjects(sort: { fields: created_at, order: DESC }, filter: {isFeatured: {eq: true}}) {
       nodes {
         id
         title
