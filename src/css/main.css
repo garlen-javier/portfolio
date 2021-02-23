@@ -693,6 +693,7 @@ Projects
   display: inline-block;
   background: var(--clr-grey-9);
   color: var(--clr-grey-5);
+  margin-bottom: 0.5rem;
   margin-right: 0.5rem;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
@@ -700,9 +701,9 @@ Projects
   letter-spacing: 2px;
   font-size: 0.85rem;
 }
-.about-stack span {
+/* .about-stack span {
   margin-top: 0.5rem;
-}
+} */
 .project-links
 {
   text-align: right;
@@ -921,6 +922,10 @@ About Page
 }
 .about-page p a{
   color: var(--clr-primary-4);
+}
+.about-page .markdown{
+  color: var(--clr-primary-4);
+  margin-bottom: 1.25rem;
 }
 .about-img {
   margin-bottom: 2rem;

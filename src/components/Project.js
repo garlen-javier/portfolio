@@ -5,6 +5,7 @@ import { FaGithubSquare,FaExternalLinkSquareAlt} from "react-icons/fa"
 import MDEditor from "@uiw/react-md-editor"
 
 const Project = ({description, title, tech_stack, github, link, featured_image}) => {
+
   return (
     <article className="project">
       {featured_image && (

@@ -21,7 +21,7 @@ const About = ({
           <Image fluid={profile_pic.childImageSharp.fluid} className="about-img" />
           <article className="about-text">
             <Title title="About Me" />
-            <p><MDEditor.Markdown source={description} /></p>
+            <MDEditor.Markdown source={description} className="markdown" />
             <div className="about-stack">
               {tech_stack.map(item => {
                 return <span key={item.id}>{item.value}</span>
