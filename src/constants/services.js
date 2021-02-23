@@ -6,7 +6,7 @@ export default [
     id: 1,
     icon: <FaMobileAlt className="service-icon" />,
     title: "Mobile App",
-    text: `Native Android app made with java/kotlin and IOS app made with objective-c/swift or Hybrid app made with flutter.`,
+    text: `Native Android app made with java/kotlin and IOS app made with objective-c/swift or Cross-platform app made with flutter.`,
   },
   {
     id: 2,
