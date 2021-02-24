@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[179],{ZghX:function(a,e){Prism.languages.hsts={directive:{pattern:/\b(?:max-age=|includeSubDomains|preload)/,alias:"keyword"},safe:{pattern:/\b\d{8,}\b/,alias:"selector"},unsafe:{pattern:/\b\d{1,7}\b/,alias:"function"}}}}]);
+//# sourceMappingURL=179-ecf22ee6199a8ab57b96.js.map
