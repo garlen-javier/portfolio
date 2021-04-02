@@ -547,9 +547,10 @@ Jobs
   max-width: var(--max-width);
 }
 .btn-container {
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
+  /* flex-direction: row; */
   justify-content: center;
+  text-align: center;
   margin-bottom: 4rem;
 }
 .job-btn {
