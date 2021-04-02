@@ -7,6 +7,7 @@ import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
+import { Helmet } from "react-helmet"
 
 
 export const query = graphql`
@@ -65,6 +66,9 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="Full Stack Mobile Developer" description="Got an amazing app idea you want to turn into reality? Let’s discuss it." />
+      <Helmet>
+      <meta name="google-site-verification" content="VD829fSaMuDA9tG2uzLEpEZ2q5t4uKaClFkKKuBZr_0" />
+      </Helmet>
       <Hero />
       <Services />
       <Jobs />
