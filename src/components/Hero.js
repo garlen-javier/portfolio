@@ -30,7 +30,7 @@ const Hero = () => {
   const {
     allStrapiAbout: { nodes },
   } = data
-  const { first_name,job_title,profile_pic,resume} = nodes[0]
+  const { first_name,job_title, profile_pic ,resume} = nodes[0]
 
   return (
     <header className="hero">
