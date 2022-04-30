@@ -65,7 +65,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Full Stack Mobile Developer" description="Got an amazing app idea you want to turn into reality? Let’s discuss it." />
+      <SEO title="Mobile & Game Developer" description="Got an amazing app idea you want to turn into reality? Let’s discuss it." />
       <Helmet>
       <meta name="google-site-verification" content="VD829fSaMuDA9tG2uzLEpEZ2q5t4uKaClFkKKuBZr_0" />
       </Helmet>
