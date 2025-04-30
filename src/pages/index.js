@@ -5,7 +5,7 @@ import Hero from "../components/Hero"
 import Services from "../components/Services"
 import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
-// import Blogs from "../components/Blogs"
+import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
 import { Helmet } from "react-helmet"
 
@@ -29,19 +29,29 @@ export const query = graphql`
         techStack
       }
     }	
+
+    allContentfulBlogs(sort: {createdAt: DESC}, limit: 3) {
+      nodes {
+        id
+        title
+        url
+        excerpt
+        tags
+        featuredImage {
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+    }    
+
   }
 `
 
-
 export default ({ data }) => {
-  // const {
-  //   allStrapiProjects: { nodes: projects },
-  //   allStrapiBlogs: { nodes: blogs },
-  // } = data
-
   const {
     allContentfulProjects: { nodes: projects },
+    allContentfulBlogs: { nodes: blogs },
   } = data
+
 
   return (
     <Layout>
@@ -53,7 +63,7 @@ export default ({ data }) => {
       <Services />
       <Jobs />
       <Projects projects={projects} title="featured projects" showLink />
-      {/* <Blogs blogs={blogs} title="latest articles" showLink /> */}
+      <Blogs blogs={blogs} title="latest articles" showLink />
     </Layout>
   )
 }
