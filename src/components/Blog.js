@@ -1,13 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Blog = ({ id, title, featured_image, tags, url, excerpt }) => {
   return (
     <a href={url} target="_blank" rel="noreferrer noopener" className="blog" key={id}>
       <article>
         {featured_image && (
-          <Image fluid={featured_image.childImageSharp.fluid} className="blog-img" />
+          <GatsbyImage
+            image={featured_image.childImageSharp.gatsbyImageData}
+            className="blog-img" />
         )}
         <div className="blog-card">
           <h4>{title}</h4>
@@ -20,7 +22,7 @@ const Blog = ({ id, title, featured_image, tags, url, excerpt }) => {
         </div>
       </article>
     </a>
-  )
+  );
 }
 
 Blog.propTypes = {

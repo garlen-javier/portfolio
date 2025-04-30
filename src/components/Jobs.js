@@ -3,38 +3,32 @@ import Title from "./Title"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 
 const query = graphql`
   {
-    allStrapiJobs(sort: { fields: start_date, order: DESC }) {
+    allContentfulJobs(sort: {startDate: DESC}) {
       nodes {
-        strapiId
+        id
         position
         company
-        start_date(formatString: "MMMM DD, YYYY")
-        end_date{
-          value
-        }
-        responsibilities {
-          id
-          value
-        }
+        startDate(formatString: "MMMM DD, YYYY")
+        endDate(formatString: "MMMM DD, YYYY")
+        responsibilities
       }
     }
   }
 `
 
-
 const Jobs = () => {
   const data = useStaticQuery(query)
 
   const {
-    allStrapiJobs: { nodes: jobs },
+    allContentfulJobs: { nodes : jobs },
   } = data
   const [value, setValue] = React.useState(0)
-  const {position, company, start_date, end_date, responsibilities} = jobs[value]
-  const endDate = (end_date[0].value === "Present") ? end_date[0].value : <Moment format="MMMM DD, YYYY">{end_date[0].value}</Moment>
+  const {position, company, startDate, endDate, responsibilities} = jobs[value]
+  const endDateStr = (endDate === null) ? "Present" : endDate
 
   return (
     <section className="section jobs">
@@ -42,10 +36,10 @@ const Jobs = () => {
       <div className="jobs-center">
         {/* btn container */}
         <div className="btn-container">
-          {jobs.map((item, index) => {
+          {jobs.map((item, index) => { 
             return (
               <button
-                key={item.strapiId}
+                key={item.id}
                 onClick={() => setValue(index)}
                 className={`job-btn ${index === value && "active-btn"}`}
               >
@@ -58,12 +52,12 @@ const Jobs = () => {
         <article className="job-info">
           <h3>{position}</h3>
           <h4>{company}</h4>
-          <p className="job-date">{start_date + " - "}{endDate}</p>
-          {responsibilities.map(item => {
+          <p className="job-date">{startDate + " - "}{endDateStr}</p>
+          {responsibilities.map((item, index) => { 
             return (
-              <div key={item.id} className="job-desc">
+              <div key={index} className="job-desc">
                 <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
-                <p>{item.value}</p>
+                <p>{item}</p>
               </div>
             )
           })}

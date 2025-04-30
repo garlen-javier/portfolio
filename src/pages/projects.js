@@ -6,7 +6,7 @@ import SEO from "../components/SEO"
 
 const ProjectsPage = ({
   data: {
-    allStrapiProjects: { nodes: projects },
+    allContentfulProjects: { nodes: projects },
   },
 }) => {
   return (
@@ -21,26 +21,23 @@ const ProjectsPage = ({
 
 export const query = graphql`
   {
-    allStrapiProjects(sort: { fields: created_at, order: DESC } ) {
+    allContentfulProjects(sort: {createdAt: DESC}) {
       nodes {
         id
         title
-        description
-        github
-        link
-        featured_image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+        description {
+          childMarkdownRemark {
+            html
           }
         }
-        tech_stack {
-          id
-          value
+        github
+        link
+        featuredImage {
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
         }
+        techStack
       }
-    }
+    }	
   }
 `
 

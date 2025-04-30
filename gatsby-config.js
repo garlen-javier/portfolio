@@ -14,6 +14,8 @@ module.exports = {
   siteMetadata: settings.meta,
   plugins: [
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
@@ -25,14 +27,21 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-strapi`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        apiURL: `${process.env.GATSBY_STRAPI_URL}`, 
-        queryLimit: 1000, // Default to 100
-        contentTypes: [`jobs`,`projects`,`blogs`],
-        singleTypes: [`about`],
+        spaceId: process.env.GATSBY_APP_CONTENTFUL_SPACE_ID,
+        accessToken: process.env.GATSBY_APP_CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: {
+    //     apiURL: `${process.env.GATSBY_STRAPI_URL}`, 
+    //     queryLimit: 1000, // Default to 100
+    //     contentTypes: [`jobs`,`projects`,`blogs`],
+    //     singleTypes: [`about`],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {

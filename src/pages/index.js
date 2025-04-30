@@ -5,62 +5,42 @@ import Hero from "../components/Hero"
 import Services from "../components/Services"
 import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
-import Blogs from "../components/Blogs"
+// import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
 import { Helmet } from "react-helmet"
 
 
 export const query = graphql`
   {
-    allStrapiProjects(sort: { fields: updated_at, order: DESC }, filter: {isFeatured: {eq: true}}) {
+    allContentfulProjects(sort: {updatedAt: DESC}, filter: {isFeatured: {eq: true}}) {
       nodes {
         id
         title
-        description
+        description {
+          childMarkdownRemark {
+            html
+          }
+        }
         github
         link
-        featured_image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        featuredImage {
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
         }
-        tech_stack {
-          id
-          value
-        }
+        techStack
       }
-    }
-
-    allStrapiBlogs(sort: { fields: created_at, order: DESC }, limit: 3)  {
-      nodes {
-        id
-        title
-        url
-        excerpt
-        tags {
-          id
-          value
-        }
-        featured_image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-
+    }	
   }
 `
 
 
 export default ({ data }) => {
+  // const {
+  //   allStrapiProjects: { nodes: projects },
+  //   allStrapiBlogs: { nodes: blogs },
+  // } = data
+
   const {
-    allStrapiProjects: { nodes: projects },
-    allStrapiBlogs: { nodes: blogs },
+    allContentfulProjects: { nodes: projects },
   } = data
 
   return (
@@ -73,7 +53,7 @@ export default ({ data }) => {
       <Services />
       <Jobs />
       <Projects projects={projects} title="featured projects" showLink />
-      <Blogs blogs={blogs} title="latest articles" showLink />
+      {/* <Blogs blogs={blogs} title="latest articles" showLink /> */}
     </Layout>
   )
 }
