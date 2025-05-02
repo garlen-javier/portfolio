@@ -12,7 +12,6 @@ const Project = ({
   link,
   featuredImage,
 }) => {
-  console.log(description)
   return (
     <article className="project">
       {featuredImage && (
